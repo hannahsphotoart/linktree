@@ -12,7 +12,7 @@
 
 body{
   font-family:'Inter',sans-serif;
-  background:#ffffff;
+  background:#fff;
   display:flex;
   justify-content:center;
 }
@@ -24,23 +24,15 @@ body{
 
 /* HERO */
 .hero{
-  position:relative;
-  height:220px;
+  height:230px;
   overflow:hidden;
-  border-bottom-left-radius:30px;
-  border-bottom-right-radius:30px;
+  border-radius:0 0 28px 28px;
 }
 
 .hero img{
   width:100%;
   height:100%;
   object-fit:cover;
-}
-
-.gradient{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to bottom, rgba(255,255,255,0.0), rgba(255,255,255,1));
 }
 
 /* PROFILE */
@@ -68,8 +60,8 @@ body{
 
 .badge{
   position:absolute;
-  bottom:-5px;
-  right:-5px;
+  bottom:-4px;
+  right:-4px;
   width:34px;
   height:34px;
   background:#fff;
@@ -85,7 +77,7 @@ body{
 
 /* NAME */
 .name{
-  margin-top:12px;
+  margin-top:14px;
   display:flex;
   align-items:center;
   gap:6px;
@@ -104,7 +96,7 @@ body{
 .sub{
   font-size:13px;
   color:#777;
-  margin-top:4px;
+  margin-top:8px; /* MEHR ABSTAND */
 }
 
 /* SOCIALS */
@@ -114,15 +106,13 @@ body{
   margin-top:16px;
 }
 
-.socials a{
-  color:#b8a25e;
-  font-size:22px;
-  text-decoration:none;
+.socials img{
+  width:24px;
 }
 
 /* BUTTONS */
 .buttons{
-  margin-top:20px;
+  margin-top:24px;
   padding:0 16px;
   display:flex;
   flex-direction:column;
@@ -143,19 +133,22 @@ body{
   text-decoration:none;
 }
 
+.btn img{
+  width:18px;
+}
+
 /* PORTFOLIO */
 .portfolio{
-  margin:24px 16px;
+  margin:28px 16px;
   border:1.5px solid #b8a25e;
   border-radius:18px;
   padding:16px;
 }
 
 .portfolio-title{
-  display:flex;
-  justify-content:center;
-  gap:8px;
+  text-align:center;
   color:#9f8d53;
+  font-weight:500;
   margin-bottom:12px;
 }
 
@@ -163,7 +156,7 @@ body{
 .slider{
   display:flex;
   gap:10px;
-  overflow:hidden;
+  overflow-x:auto;
 }
 
 .slider img{
@@ -179,16 +172,15 @@ body{
 
 <!-- HERO -->
 <div class="hero">
-  <img src="cover.jpg">
-  <div class="gradient"></div>
+  <img src="cover.png">
 </div>
 
 <!-- PROFILE -->
 <div class="profile">
   <div class="avatar">
-    <img src="profile.jpg">
+    <img src="profile.png">
     <div class="badge">
-      <img src="camera-heart.png">
+      <img src="profile-camera-heart.png">
     </div>
   </div>
 
@@ -200,27 +192,38 @@ body{
   <div class="sub">Photographer | Creator | Traveler</div>
 
   <div class="socials">
-    <a href="https://www.instagram.com/hannahs.photoart">◎</a>
-    <a href="https://www.tiktok.com/@hannahs.photoart">♪</a>
-    <a href="#">✈</a>
+    <a href="https://www.instagram.com/hannahs.photoart">
+      <img src="instagram.png">
+    </a>
+    <a href="https://www.tiktok.com/@hannahs.photoart">
+      <img src="tiktok.png">
+    </a>
+    <a href="mailto:hannahkittner.business@gmail.com">
+      <img src="telegram.png">
+    </a>
   </div>
 </div>
 
 <!-- BUTTONS -->
 <div class="buttons">
-  <a class="btn" href="https://hannahs-photoart.onepage.me/">✨ Work with me</a>
-  <a class="btn" href="https://www.dropbox.com/request/cfdjl8c34cw5rf0dkrlb">📤 Upload your photos</a>
-  <a class="btn" href="#portfolio">🖼 Portfolio Highlights</a>
+  <a class="btn" href="https://hannahs-photoart.onepage.me/">
+    <img src="sparkles.png"> Work with me
+  </a>
+
+  <a class="btn" href="https://www.dropbox.com/request/cfdjl8c34cw5rf0dkrlb">
+    <img src="upload-icon.png"> Upload your photos
+  </a>
 </div>
 
 <!-- PORTFOLIO -->
-<div id="portfolio" class="portfolio">
-  <div class="portfolio-title">🖼 Portfolio Highlights</div>
+<div class="portfolio">
+  <div class="portfolio-title">Portfolio Highlights</div>
+
   <div class="slider">
-    <img src="img1.jpg">
-    <img src="img2.jpg">
-    <img src="img3.jpg">
-    <img src="img4.jpg">
+    <img src="highlight-1.png">
+    <img src="highlight-2.png">
+    <img src="highlight-3.png">
+    <img src="highlight-4.png">
   </div>
 </div>
 
