@@ -1,0 +1,1 @@
+Alle Dateien in denselben Ordner legen. Danach index.html im Browser oder per VS Code Live Server öffnen.
