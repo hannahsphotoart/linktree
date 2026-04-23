@@ -1,619 +1,230 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hannah Kittner</title>
-  <meta name="description" content="Photographer | Creator | Traveler" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #ffffff;
-      --text: #060606;
-      --muted: #4f4f4f;
-      --gold: #b8a25e;
-      --gold-dark: #9f8d53;
-      --blue: #3f95e6;
-      --border: 2px solid rgba(184, 162, 94, 0.95);
-      --shadow: 0 18px 40px rgba(0, 0, 0, 0.06);
-      --page-width: 760px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hannah Kittner</title>
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-    .page {
-      width: min(100%, var(--page-width));
-      margin: 0 auto;
-      padding: 24px 18px 48px;
-    }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
 
-    .hero {
-      position: relative;
-      height: clamp(240px, 38vw, 360px);
-      border-radius: 32px;
-      overflow: hidden;
-      background: #f7f7f7;
-      box-shadow: var(--shadow);
-    }
+body{
+  font-family:'Inter',sans-serif;
+  background:#ffffff;
+  display:flex;
+  justify-content:center;
+}
 
-    .hero img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
-      display: block;
-      transform: scale(1.02);
-    }
+.container{
+  width:100%;
+  max-width:390px;
+}
 
-    .hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.58) 0%, rgba(255,255,255,0.18) 38%, rgba(255,255,255,0.96) 100%);
-      pointer-events: none;
-    }
+/* HERO */
+.hero{
+  position:relative;
+  height:220px;
+  overflow:hidden;
+  border-bottom-left-radius:30px;
+  border-bottom-right-radius:30px;
+}
 
-    .profile-area {
-      position: relative;
-      z-index: 2;
-      margin-top: -102px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding-inline: 10px;
-    }
+.hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 
-    .avatar-wrap {
-      position: relative;
-      width: clamp(148px, 24vw, 190px);
-      height: clamp(148px, 24vw, 190px);
-      border-radius: 999px;
-      background: #fff;
-      padding: 10px;
-      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.10);
-    }
+.gradient{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom, rgba(255,255,255,0.0), rgba(255,255,255,1));
+}
 
-    .avatar {
-      width: 100%;
-      height: 100%;
-      border-radius: 999px;
-      object-fit: cover;
-      object-position: center center;
-      display: block;
-    }
+/* PROFILE */
+.profile{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-top:-70px;
+}
 
-    .avatar-badge {
-      position: absolute;
-      right: -2px;
-      bottom: 14px;
-      width: clamp(48px, 8vw, 60px);
-      height: clamp(48px, 8vw, 60px);
-      display: grid;
-      place-items: center;
-      background: #fff;
-      border-radius: 999px;
-      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.10);
-      padding: 8px;
-    }
+.avatar{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  border:6px solid #fff;
+  overflow:hidden;
+  position:relative;
+}
 
-    .avatar-badge img { width: 100%; height: 100%; object-fit: contain; }
+.avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 
-    .name-row {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 22px;
-      flex-wrap: wrap;
-    }
+.badge{
+  position:absolute;
+  bottom:-5px;
+  right:-5px;
+  width:34px;
+  height:34px;
+  background:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 
-    h1 {
-      margin: 0;
-      font-size: clamp(2rem, 5.2vw, 4rem);
-      font-weight: 600;
-      letter-spacing: -0.04em;
-      line-height: 1;
-    }
+.badge img{
+  width:20px;
+}
 
-    .verified {
-      width: clamp(28px, 4vw, 36px);
-      height: clamp(28px, 4vw, 36px);
-      object-fit: contain;
-      transform: translateY(2px);
-    }
+/* NAME */
+.name{
+  margin-top:12px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
 
-    .subtitle {
-      margin-top: 16px;
-      font-size: clamp(1.05rem, 2.3vw, 1.4rem);
-      font-weight: 400;
-      color: #333;
-      letter-spacing: -0.02em;
-    }
+.name h1{
+  font-size:20px;
+  font-weight:600;
+}
 
-    .socials {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 28px;
-      margin-top: 26px;
-    }
+.name img{
+  width:18px;
+}
 
-    .socials a {
-      color: var(--gold);
-      display: grid;
-      place-items: center;
-      width: 42px;
-      height: 42px;
-      transition: transform .22s ease, color .22s ease, opacity .22s ease;
-    }
+/* SUB */
+.sub{
+  font-size:13px;
+  color:#777;
+  margin-top:4px;
+}
 
-    .socials a:hover { transform: translateY(-2px) scale(1.04); color: var(--gold-dark); opacity: .95; }
-    .socials svg { width: 100%; height: 100%; fill: currentColor; }
+/* SOCIALS */
+.socials{
+  display:flex;
+  gap:22px;
+  margin-top:16px;
+}
 
-    .stack {
-      margin-top: 34px;
-      display: grid;
-      gap: 18px;
-    }
+.socials a{
+  color:#b8a25e;
+  font-size:22px;
+  text-decoration:none;
+}
 
-    .card-wrap {
-      position: relative;
-    }
+/* BUTTONS */
+.buttons{
+  margin-top:20px;
+  padding:0 16px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
 
-    .card {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      min-height: 96px;
-      width: 100%;
-      border-radius: 999px;
-      border: var(--border);
-      background: #fff;
-      text-decoration: none;
-      color: var(--gold-dark);
-      padding: 0 84px 0 84px;
-      box-shadow: 0 0 0 rgba(0,0,0,0);
-      transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
-      text-align: center;
-    }
+.btn{
+  width:100%;
+  padding:14px;
+  border:1.5px solid #b8a25e;
+  border-radius:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  color:#9f8d53;
+  font-weight:500;
+  text-decoration:none;
+}
 
-    .card.large {
-      border-radius: 34px;
-      min-height: 318px;
-      align-items: stretch;
-      padding: 0;
-      overflow: hidden;
-      display: block;
-    }
+/* PORTFOLIO */
+.portfolio{
+  margin:24px 16px;
+  border:1.5px solid #b8a25e;
+  border-radius:18px;
+  padding:16px;
+}
 
-    .card:hover {
-      background: linear-gradient(180deg, #fff 0%, #fffdf8 100%);
-      box-shadow: 0 12px 28px rgba(184, 162, 94, 0.12);
-      transform: translateY(-1px);
-    }
+.portfolio-title{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  color:#9f8d53;
+  margin-bottom:12px;
+}
 
-    .card-content {
-      width: 100%;
-      min-height: 96px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      padding: 0 84px;
-      text-align: center;
-    }
+/* SLIDER */
+.slider{
+  display:flex;
+  gap:10px;
+  overflow:hidden;
+}
 
-    .card.large .card-content {
-      min-height: auto;
-      justify-content: center;
-      padding: 24px 84px 18px;
-    }
-
-    .label {
-      font-size: clamp(1.05rem, 2.6vw, 1.35rem);
-      font-weight: 500;
-      line-height: 1.2;
-      color: var(--gold-dark);
-    }
-
-    .icon {
-      width: 28px;
-      height: 28px;
-      object-fit: contain;
-      flex: 0 0 auto;
-    }
-
-    .menu-btn {
-      position: absolute;
-      top: 50%;
-      right: 22px;
-      transform: translateY(-50%);
-      border: 0;
-      background: transparent;
-      color: var(--gold-dark);
-      width: 44px;
-      height: 44px;
-      border-radius: 999px;
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-      z-index: 3;
-      transition: background-color .18s ease, transform .18s ease;
-    }
-
-    .card-wrap.large-wrap .menu-btn {
-      top: 34px;
-      transform: none;
-    }
-
-    .menu-btn:hover { background: rgba(184,162,94,.12); }
-    .menu-btn svg { width: 20px; height: 20px; fill: currentColor; }
-
-    .menu {
-      position: absolute;
-      top: calc(100% + 8px);
-      right: 12px;
-      min-width: 156px;
-      background: #fff;
-      border: 1px solid rgba(184,162,94,.25);
-      border-radius: 14px;
-      box-shadow: 0 12px 30px rgba(0,0,0,.10);
-      padding: 8px;
-      display: none;
-      z-index: 10;
-    }
-
-    .card-wrap.large-wrap .menu {
-      top: 54px;
-    }
-
-    .menu.open { display: block; }
-
-    .menu button {
-      width: 100%;
-      border: 0;
-      background: transparent;
-      border-radius: 10px;
-      padding: 12px 14px;
-      font: inherit;
-      font-size: .95rem;
-      text-align: left;
-      color: #262626;
-      cursor: pointer;
-    }
-
-    .menu button:hover { background: #faf7ef; }
-
-    .portfolio-header {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 24px 84px 0;
-    }
-
-    .portfolio-title {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      color: var(--gold-dark);
-      text-align: center;
-    }
-
-    .carousel-shell {
-      margin-top: 18px;
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      padding: 0 0 24px;
-    }
-
-    .carousel-shell::before,
-    .carousel-shell::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 54px;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .carousel-shell::before {
-      left: 0;
-      background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
-    }
-
-    .carousel-shell::after {
-      right: 0;
-      background: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
-    }
-
-    .marquee {
-      display: flex;
-      align-items: center;
-      width: max-content;
-      animation: scrollLoop 42s linear infinite;
-      will-change: transform;
-    }
-
-    .marquee-group {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      padding-right: 18px;
-    }
-
-    .slide {
-      position: relative;
-      flex: 0 0 auto;
-      border-radius: 14px;
-      overflow: hidden;
-      background: #f5f5f5;
-    }
-
-    .slide img {
-      display: block;
-      height: 180px;
-      width: auto;
-      max-width: none;
-      object-fit: contain;
-      transition: transform .65s ease, opacity .65s ease, filter .65s ease;
-    }
-
-    .slide::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(255,255,255,.10), rgba(255,255,255,0));
-      opacity: 0;
-      transition: opacity .55s ease;
-      pointer-events: none;
-    }
-
-    .slide:hover img {
-      transform: scale(1.03);
-      opacity: .88;
-      filter: saturate(1.02);
-    }
-
-    .slide:hover::after { opacity: 1; }
-
-    @keyframes scrollLoop {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
-    .toast {
-      position: fixed;
-      left: 50%;
-      bottom: 24px;
-      transform: translateX(-50%) translateY(12px);
-      background: #111;
-      color: #fff;
-      padding: 12px 18px;
-      border-radius: 999px;
-      font-size: .92rem;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .22s ease, transform .22s ease;
-      z-index: 30;
-      white-space: nowrap;
-    }
-
-    .toast.show {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-    }
-
-    @media (max-width: 680px) {
-      .page { padding: 14px 14px 40px; }
-      .hero { height: 230px; border-radius: 28px; }
-      .profile-area { margin-top: -88px; }
-      .socials { gap: 24px; }
-      .card { min-height: 88px; padding: 0 74px; }
-      .card-content, .card.large .card-content, .portfolio-header { padding-inline: 74px; }
-      .card.large { min-height: 296px; }
-      .slide img { height: 160px; }
-    }
-
-    @media (max-width: 480px) {
-      .page { padding-inline: 10px; }
-      .hero { height: 208px; border-radius: 24px; }
-      .profile-area { margin-top: -80px; }
-      .subtitle { max-width: 320px; }
-      .socials { gap: 22px; }
-      .socials a { width: 38px; height: 38px; }
-      .stack { gap: 14px; margin-top: 28px; }
-      .card {
-        min-height: 82px;
-        padding: 0 64px;
-      }
-      .card-content, .card.large .card-content, .portfolio-header {
-        padding-inline: 64px;
-      }
-      .menu-btn { right: 14px; width: 40px; height: 40px; }
-      .label { font-size: 1rem; }
-      .icon { width: 24px; height: 24px; }
-      .card.large { min-height: 272px; border-radius: 28px; }
-      .slide img { height: 136px; }
-      .carousel-shell::before, .carousel-shell::after { width: 28px; }
-    }
-  </style>
+.slider img{
+  height:140px;
+  border-radius:10px;
+}
+</style>
 </head>
+
 <body>
-  <main class="page">
-    <section class="hero">
-      <img src="cover.png" alt="Coverbild von Hannah Kittner" />
-    </section>
 
-    <section class="profile-area">
-      <div class="avatar-wrap">
-        <img class="avatar" src="profile.png" alt="Profilbild von Hannah Kittner" />
-        <div class="avatar-badge">
-          <img src="profile-camera-heart.png" alt="Kamera mit Herz" />
-        </div>
-      </div>
+<div class="container">
 
-      <div class="name-row">
-        <h1>Hannah Kittner</h1>
-        <img class="verified" src="verified.png" alt="Verified Badge" />
-      </div>
+<!-- HERO -->
+<div class="hero">
+  <img src="cover.jpg">
+  <div class="gradient"></div>
+</div>
 
-      <div class="subtitle">Photographer | Creator | Traveler</div>
+<!-- PROFILE -->
+<div class="profile">
+  <div class="avatar">
+    <img src="profile.jpg">
+    <div class="badge">
+      <img src="camera-heart.png">
+    </div>
+  </div>
 
-      <nav class="socials" aria-label="Social Media Links">
-        <a href="https://www.instagram.com/hannahs.photoart?igsh=NmlsbWxmazN6bHU%3D&utm_source=qr" target="_blank" rel="noreferrer" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5Zm8.95 1.45a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8A3.2 3.2 0 1 0 12 15.2 3.2 3.2 0 0 0 12 8.8Z"/></svg>
-        </a>
-        <a href="https://www.tiktok.com/@hannahs.photoart?_r=1&_t=ZN-92GiFjsS0ta" target="_blank" rel="noreferrer" aria-label="TikTok">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.48 3c.27 2.15 1.53 3.91 3.52 4.73.6.25 1.24.4 2 .46v2.83a8.33 8.33 0 0 1-3.88-1.08v5.67c0 3.18-2.55 5.73-5.7 5.73a5.72 5.72 0 0 1-4.53-9.2 5.66 5.66 0 0 1 4.26-2.16v2.91a2.74 2.74 0 0 0-1.95 4.67c.52.53 1.23.86 2.02.86 1.57 0 2.85-1.29 2.85-2.88V3h3.41Z"/></svg>
-        </a>
-        <a href="mailto:hannahkittner.business@gmail.com" aria-label="E-Mail">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.8 3.6 2.7 10.92c-.92.35-.89 1.67.05 1.98l4.66 1.52 1.52 4.67c.3.94 1.63.97 1.98.05L18.2 4.2a.91.91 0 0 1 1.18 1.18l-7.94 15.32a2.05 2.05 0 0 1-3.76-.34l-1.3-3.98-3.98-1.3A2.05 2.05 0 0 1 2.06 11.3L17.38 3.35a2.05 2.05 0 0 1 2.76 2.76Z"/></svg>
-        </a>
-      </nav>
-    </section>
+  <div class="name">
+    <h1>Hannah Kittner</h1>
+    <img src="verified.png">
+  </div>
 
-    <section class="stack" aria-label="Links">
-      <div class="card-wrap" data-share="https://hannahs-photoart.onepage.me/">
-        <a class="card" href="https://hannahs-photoart.onepage.me/" target="_blank" rel="noreferrer">
-          <div class="card-content">
-            <img class="icon" src="sparkles.png" alt="" aria-hidden="true" />
-            <span class="label">Work with me</span>
-          </div>
-        </a>
-        <button class="menu-btn" type="button" aria-label="Link teilen">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5.25a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm0 8.25a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm0 8.25a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"/></svg>
-        </button>
-        <div class="menu">
-          <button type="button" class="share-action">Link teilen</button>
-        </div>
-      </div>
+  <div class="sub">Photographer | Creator | Traveler</div>
 
-      <div class="card-wrap" data-share="https://www.dropbox.com/request/cfdjl8c34cw5rf0dkrlb">
-        <a class="card" href="https://www.dropbox.com/request/cfdjl8c34cw5rf0dkrlb" target="_blank" rel="noreferrer">
-          <div class="card-content">
-            <img class="icon" src="upload-icon.png" alt="" aria-hidden="true" />
-            <span class="label">Upload your photos</span>
-          </div>
-        </a>
-        <button class="menu-btn" type="button" aria-label="Link teilen">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5.25a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm0 8.25a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm0 8.25a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"/></svg>
-        </button>
-        <div class="menu">
-          <button type="button" class="share-action">Link teilen</button>
-        </div>
-      </div>
+  <div class="socials">
+    <a href="https://www.instagram.com/hannahs.photoart">◎</a>
+    <a href="https://www.tiktok.com/@hannahs.photoart">♪</a>
+    <a href="#">✈</a>
+  </div>
+</div>
 
-      <div class="card-wrap large-wrap" data-share="https://hannahs-photoart.onepage.me/portfolio">
-        <section class="card large" id="portfolio-highlights">
-          <div class="portfolio-header">
-            <div class="portfolio-title">
-              <img class="icon" src="gallery-icon.png" alt="" aria-hidden="true" />
-              <span class="label">Portfolio Highlights</span>
-            </div>
-          </div>
+<!-- BUTTONS -->
+<div class="buttons">
+  <a class="btn" href="https://hannahs-photoart.onepage.me/">✨ Work with me</a>
+  <a class="btn" href="https://www.dropbox.com/request/cfdjl8c34cw5rf0dkrlb">📤 Upload your photos</a>
+  <a class="btn" href="#portfolio">🖼 Portfolio Highlights</a>
+</div>
 
-          <a href="https://hannahs-photoart.onepage.me/portfolio" target="_blank" rel="noreferrer" aria-label="Portfolio öffnen" style="text-decoration:none; color:inherit; display:block;">
-            <div class="carousel-shell">
-              <div class="marquee" aria-hidden="true">
-                <div class="marquee-group">
-                  <div class="slide"><img src="highlight-1.png" alt="Portfolio Highlight 1" /></div>
-                  <div class="slide"><img src="highlight-2.png" alt="Portfolio Highlight 2" /></div>
-                  <div class="slide"><img src="highlight-3.png" alt="Portfolio Highlight 3" /></div>
-                  <div class="slide"><img src="highlight-4.png" alt="Portfolio Highlight 4" /></div>
-                </div>
-                <div class="marquee-group">
-                  <div class="slide"><img src="highlight-1.png" alt="" /></div>
-                  <div class="slide"><img src="highlight-2.png" alt="" /></div>
-                  <div class="slide"><img src="highlight-3.png" alt="" /></div>
-                  <div class="slide"><img src="highlight-4.png" alt="" /></div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </section>
-        <button class="menu-btn" type="button" aria-label="Portfolio-Link teilen">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5.25a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm0 8.25a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm0 8.25a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"/></svg>
-        </button>
-        <div class="menu">
-          <button type="button" class="share-action">Link teilen</button>
-        </div>
-      </div>
-    </section>
-  </main>
+<!-- PORTFOLIO -->
+<div id="portfolio" class="portfolio">
+  <div class="portfolio-title">🖼 Portfolio Highlights</div>
+  <div class="slider">
+    <img src="img1.jpg">
+    <img src="img2.jpg">
+    <img src="img3.jpg">
+    <img src="img4.jpg">
+  </div>
+</div>
 
-  <div class="toast" id="toast">Link kopiert</div>
+</div>
 
-  <script>
-    const toast = document.getElementById('toast');
-
-    function showToast(message) {
-      toast.textContent = message;
-      toast.classList.add('show');
-      clearTimeout(showToast._timer);
-      showToast._timer = setTimeout(() => toast.classList.remove('show'), 1800);
-    }
-
-    async function shareLink(url) {
-      try {
-        if (navigator.share) {
-          await navigator.share({ url });
-          return;
-        }
-      } catch (err) {
-        if (err && err.name === 'AbortError') return;
-      }
-
-      try {
-        await navigator.clipboard.writeText(url);
-        showToast('Link kopiert');
-      } catch {
-        showToast('Teilen nicht verfügbar');
-      }
-    }
-
-    document.querySelectorAll('.card-wrap').forEach((wrap) => {
-      const menuBtn = wrap.querySelector('.menu-btn');
-      const menu = wrap.querySelector('.menu');
-      const shareBtn = wrap.querySelector('.share-action');
-      const url = wrap.dataset.share;
-
-      menuBtn.addEventListener('click', (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        document.querySelectorAll('.menu.open').forEach((openMenu) => {
-          if (openMenu !== menu) openMenu.classList.remove('open');
-        });
-        menu.classList.toggle('open');
-      });
-
-      shareBtn.addEventListener('click', async (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        menu.classList.remove('open');
-        await shareLink(url);
-      });
-    });
-
-    document.addEventListener('click', (event) => {
-      document.querySelectorAll('.menu.open').forEach((menu) => {
-        if (!menu.contains(event.target)) menu.classList.remove('open');
-      });
-    });
-  </script>
 </body>
 </html>
