@@ -34,7 +34,8 @@ body{
   width:100%;
   height:100%;
   object-fit:cover;
-  object-position:center 30%;
+  object-position:center 42%;
+  transform:scale(1.18);
 }
 
 .hero::after{
@@ -43,7 +44,7 @@ body{
   bottom:0;
   left:0;
   right:0;
-  height:80px;
+  height:90px;
   background:linear-gradient(to bottom, rgba(255,255,255,0), #fff);
 }
 
@@ -52,12 +53,12 @@ body{
   display:flex;
   flex-direction:column;
   align-items:center;
-  margin-top:-90px;
+  margin-top:-75px;
 }
 
 .avatar{
-  width:140px;
-  height:140px;
+  width:150px;
+  height:150px;
   border-radius:50%;
   border:7px solid #fff;
   overflow:hidden;
@@ -73,20 +74,20 @@ body{
 
 .badge{
   position:absolute;
-  bottom:0;
-  right:0;
-  width:40px;
-  height:40px;
+  bottom:-6px;
+  right:-6px;
+  width:44px;
+  height:44px;
   background:#fff;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow:0 2px 10px rgba(0,0,0,0.2);
+  box-shadow:0 4px 12px rgba(0,0,0,0.2);
 }
 
 .badge img{
-  width:22px;
+  width:24px;
 }
 
 /* NAME */
@@ -110,14 +111,14 @@ body{
 .sub{
   font-size:13px;
   color:#777;
-  margin-top:8px;
+  margin-top:10px;
 }
 
 /* SOCIALS */
 .socials{
   display:flex;
-  gap:22px;
-  margin-top:16px;
+  gap:24px;
+  margin-top:18px;
 }
 
 .socials img{
@@ -126,7 +127,7 @@ body{
 
 /* BUTTONS */
 .buttons{
-  margin-top:26px;
+  margin-top:28px;
   padding:0 16px;
   display:flex;
   flex-direction:column;
@@ -145,6 +146,11 @@ body{
   color:#9f8d53;
   font-weight:500;
   text-decoration:none;
+  transition:0.25s;
+}
+
+.btn:hover{
+  background:#b8a25e10;
 }
 
 .btn img{
@@ -153,7 +159,7 @@ body{
 
 /* PORTFOLIO */
 .portfolio{
-  margin:28px 16px;
+  margin:32px 16px;
   border:1.5px solid #b8a25e;
   border-radius:18px;
   padding:16px;
@@ -182,13 +188,14 @@ body{
 
 .slider{
   display:flex;
-  gap:12px;
-  animation:scroll 20s linear infinite;
+  gap:14px;
+  width:max-content;
+  animation:scroll 28s linear infinite;
 }
 
 .slider img{
   height:150px;
-  border-radius:12px;
+  border-radius:14px;
 }
 
 /* Fade edges */
@@ -198,7 +205,7 @@ body{
   position:absolute;
   top:0;
   bottom:0;
-  width:40px;
+  width:50px;
   z-index:2;
 }
 
@@ -225,13 +232,13 @@ body{
 
 <!-- HERO -->
 <div class="hero">
-  <img src="cover.png">
+  <img src="cover.png" loading="lazy">
 </div>
 
 <!-- PROFILE -->
 <div class="profile">
   <div class="avatar">
-    <img src="profile.png">
+    <img src="profile.png" loading="lazy">
     <div class="badge">
       <img src="profile-camera-heart.png">
     </div>
@@ -276,12 +283,12 @@ body{
 
   <div class="slider-wrapper">
     <div class="slider">
-      <img src="highlight-1.png">
-      <img src="highlight-2.png">
-      <img src="highlight-3.png">
-      <img src="highlight-4.png">
+      <img src="highlight-1.png" loading="lazy">
+      <img src="highlight-2.png" loading="lazy">
+      <img src="highlight-3.png" loading="lazy">
+      <img src="highlight-4.png" loading="lazy">
 
-      <!-- duplicate for smooth loop -->
+      <!-- duplicate -->
       <img src="highlight-1.png">
       <img src="highlight-2.png">
       <img src="highlight-3.png">
